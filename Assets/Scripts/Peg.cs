@@ -1,6 +1,5 @@
 using UnityEngine;
 using System.Collections.Generic;
-// using static Ring; // Không cần thiết nếu bạn dùng Ring.RingColor
 
 public class Peg : MonoBehaviour
 {
@@ -12,7 +11,7 @@ public class Peg : MonoBehaviour
 
     void Awake()
     {
-        if(basePosition == null)
+        if (basePosition == null)
         {
             // Tạo một GameObject con làm basePosition nếu chưa có
             GameObject baseObj = new GameObject("BasePosition");
@@ -20,7 +19,6 @@ public class Peg : MonoBehaviour
             baseObj.transform.localPosition = new Vector3(0, 0, 0);
             basePosition = baseObj.transform;
         }
-        // maxRingsAllowed sẽ được set từ GameManager
     }
 
     public void SetMaxRingsAllowed(int max)
@@ -71,7 +69,6 @@ public class Peg : MonoBehaviour
     }
 
     // Hàm kiểm tra xem trụ có thể nhận một vòng cụ thể hay không
-    // Logic này sẽ được đơn giản hóa và kiểm tra màu thực của vòng
     public bool CanAddRing(Ring ringToAdd)
     {
         if (rings.Count >= maxRingsAllowed)
@@ -105,22 +102,99 @@ public class Peg : MonoBehaviour
 
         Ring.RingColor firstRingActualColor = rings.Peek().GetActualColor(); // Lấy màu thực của vòng trên cùng
 
-        if (firstRingActualColor == Ring.RingColor.White || firstRingActualColor == Ring.RingColor.Mystery) // 'White' ở đây có thể dùng thay cho 'None' nếu bạn không có màu 'None' rõ ràng
+        if (firstRingActualColor == Ring.RingColor.White || firstRingActualColor == Ring.RingColor.Mystery)
         {
             // Trụ chứa vòng chưa có màu cụ thể hoặc vẫn là mystery, không coi là đã sắp xếp hoàn chỉnh
             Debug.Log($"[Peg.cs] Peg '{name}' is not sorted: Top ring is {firstRingActualColor}.");
             return false;
         }
+        if (rings.Count != maxRingsAllowed)
+        {
+            return false;
+        }
 
         foreach (Ring ring in rings)
-        {
-            if (ring.GetActualColor() != firstRingActualColor)
             {
-                Debug.Log($"[Peg.cs] Peg '{name}' is not sorted: Contains mixed colors (found {ring.GetActualColor()} different from {firstRingActualColor}).");
-                return false; // Có vòng khác màu thực
+                if (ring.GetActualColor() != firstRingActualColor)
+                {
+                    Debug.Log($"[Peg.cs] Peg '{name}' is not sorted: Contains mixed colors (found {ring.GetActualColor()} different from {firstRingActualColor}).");
+                    return false; // Có vòng khác màu thực
+                }
             }
-        }
         Debug.Log($"[Peg.cs] Peg '{name}' is sorted with color {firstRingActualColor}.");
         return true; // Tất cả vòng đều cùng màu thực
     }
+// Hàm lấy ra một chuỗi vòng từ trụ, từ vòng trên cùng xuống đến vòng có màu khác
+// Trả về một List các vòng theo thứ tự từ dưới lên của chuỗi
+public List<Ring> GetTopColorStack()
+{
+    List<Ring> colorStack = new List<Ring>();
+    if (rings.Count == 0) return colorStack;
+
+    Ring topRing = GetTopRing();
+    Ring.RingColor stackColor = topRing.GetActualColor();
+
+    // Cần chuyển Stack thành Array/List để duyệt từ trên xuống dưới mà không Pop
+    Ring[] ringsArray = rings.ToArray();
+
+    // Duyệt ngược từ đỉnh stack (index 0 của mảng)
+    for (int i = 0; i < ringsArray.Length; i++)
+    {
+        if (ringsArray[i].GetActualColor() == stackColor)
+        {
+            // Thêm vòng vào đầu danh sách (để duy trì thứ tự từ dưới lên khi di chuyển)
+            colorStack.Insert(0, ringsArray[i]);
+        }
+        else
+        {
+            break;
+        }
+    }
+    return colorStack;
+}
+
+// Hàm kiểm tra xem trụ có thể nhận một CHUỖI vòng hay không
+public bool CanAddRingStack(List<Ring> ringStackToAdd)
+{
+    if (ringStackToAdd == null || ringStackToAdd.Count == 0) return false;
+
+    // Kiểm tra đủ chỗ
+    if (rings.Count + ringStackToAdd.Count > maxRingsAllowed)
+    {
+        Debug.Log($"[Peg.cs] CanAddRingStack: Peg '{name}' will be full. Cannot add stack.");
+        return false;
+    }
+
+    if (rings.Count == 0)
+    {
+        return true;
+    }
+
+    // Vòng trên cùng của trụ hiện tại
+    Ring topRingOnPeg = GetTopRing();
+    // Vòng dưới cùng của chuỗi muốn thêm (vòng đầu tiên trong List ringStackToAdd)
+    Ring bottomRingOfStack = ringStackToAdd[0];
+    // Quy tắc: Chỉ có thể thêm chuỗi nếu màu thực sự của vòng dưới cùng của chuỗi
+    // trùng với màu thực sự của vòng trên cùng của trụ đích
+    return bottomRingOfStack.GetActualColor() == topRingOnPeg.GetActualColor();
+}
+
+// Hàm thêm một chuỗi vòng vào trụ (theo thứ tự từ dưới lên của chuỗi)
+public void AddRingStack(List<Ring> ringStack)
+{
+    foreach (Ring ring in ringStack)
+    {
+        // Sử dụng logic AddRing hiện có để đặt từng vòng vào đúng vị trí
+        AddRing(ring);
+    }
+}
+
+// Hàm xóa một chuỗi vòng từ trụ
+public void RemoveRingStack(int count)
+{
+    for (int i = 0; i < count; i++)
+    {
+        RemoveRing();
+    }
+}
 }
