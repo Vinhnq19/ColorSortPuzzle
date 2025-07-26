@@ -1277,6 +1277,11 @@ MonoBehaviour:
   levelButtonPrefab: {fileID: 8100160895672919461, guid: 260205e5cb95b2f41aa0bcac0e62fd8f, type: 3}
   levelButtonParent: {fileID: 615294600}
   levels:
+  - numPegs: 2
+    initialPegConfigs:
+    - ringsOnPeg: 010000000100000001000000
+    - ringsOnPeg: 01000000
+    mysteryConfigs: []
   - numPegs: 3
     initialPegConfigs:
     - ringsOnPeg: 010000000200000002000000
@@ -1290,12 +1295,13 @@ MonoBehaviour:
     - ringsOnPeg: 010000000100000002000000
     - ringsOnPeg: 0200000004000000
     mysteryConfigs: []
-  - numPegs: 4
+  - numPegs: 5
     initialPegConfigs:
-    - ringsOnPeg: 06000000060000000200000004000000
-    - ringsOnPeg: 06000000060000000400000002000000
-    - ringsOnPeg: 040000000100000001000000
-    - ringsOnPeg: 02000000
+    - ringsOnPeg: 02000000040000000100000002000000
+    - ringsOnPeg: 04000000040000000100000002000000
+    - ringsOnPeg: 01000000020000000400000001000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
     mysteryConfigs:
     - pegIndex: 0
       ringIndex: 0
@@ -1309,66 +1315,454 @@ MonoBehaviour:
     - pegIndex: 1
       ringIndex: 1
       actualColor: 1
-  - numPegs: 10
+  - numPegs: 5
     initialPegConfigs:
-    - ringsOnPeg: 
-    - ringsOnPeg: 
-    - ringsOnPeg: 
-    - ringsOnPeg: 
-    - ringsOnPeg: 
-    - ringsOnPeg: 
-    - ringsOnPeg: 
-    - ringsOnPeg: 
+    - ringsOnPeg: 02000000010000000400000004000000
+    - ringsOnPeg: 02000000010000000200000001000000
+    - ringsOnPeg: 04000000020000000100000004000000
     - ringsOnPeg: 
     - ringsOnPeg: 
     mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
+  - numPegs: 7
+    initialPegConfigs:
+    - ringsOnPeg: 06000000060000000600000005000000
+    - ringsOnPeg: 06000000060000000600000005000000
+    - ringsOnPeg: 06000000060000000600000001000000
+    - ringsOnPeg: 06000000060000000600000002000000
+    - ringsOnPeg: 06000000060000000600000002000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
+    mysteryConfigs:
+    - pegIndex: 0
+      ringIndex: 2
+      actualColor: 2
+    - pegIndex: 0
+      ringIndex: 1
+      actualColor: 4
+    - pegIndex: 0
+      ringIndex: 0
+      actualColor: 3
+    - pegIndex: 1
+      ringIndex: 2
+      actualColor: 2
+    - pegIndex: 1
+      ringIndex: 1
+      actualColor: 3
+    - pegIndex: 1
+      ringIndex: 0
+      actualColor: 4
+    - pegIndex: 2
+      ringIndex: 2
+      actualColor: 4
+    - pegIndex: 2
+      ringIndex: 1
+      actualColor: 1
+    - pegIndex: 2
+      ringIndex: 0
+      actualColor: 5
+    - pegIndex: 3
+      ringIndex: 2
+      actualColor: 1
+    - pegIndex: 3
+      ringIndex: 1
+      actualColor: 5
+    - pegIndex: 3
+      ringIndex: 0
+      actualColor: 4
+    - pegIndex: 4
+      ringIndex: 2
+      actualColor: 1
+    - pegIndex: 4
+      ringIndex: 1
+      actualColor: 3
+    - pegIndex: 4
+      ringIndex: 0
+      actualColor: 3
+  - numPegs: 6
+    initialPegConfigs:
+    - ringsOnPeg: 01000000030000000300000003000000
+    - ringsOnPeg: 04000000010000000500000003000000
+    - ringsOnPeg: 05000000040000000100000004000000
+    - ringsOnPeg: 02000000050000000400000005000000
+    - ringsOnPeg: 02000000020000000200000001000000
+    - ringsOnPeg: 
     mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
+  - numPegs: 7
+    initialPegConfigs:
+    - ringsOnPeg: 03000000040000000100000004000000
+    - ringsOnPeg: 02000000020000000100000004000000
+    - ringsOnPeg: 05000000050000000200000004000000
+    - ringsOnPeg: 03000000050000000100000002000000
+    - ringsOnPeg: 03000000010000000300000005000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
     mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
+  - numPegs: 7
+    initialPegConfigs:
+    - ringsOnPeg: 06000000060000000600000002000000
+    - ringsOnPeg: 06000000060000000600000004000000
+    - ringsOnPeg: 06000000060000000600000001000000
+    - ringsOnPeg: 06000000060000000600000005000000
+    - ringsOnPeg: 06000000060000000600000004000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
+    mysteryConfigs:
+    - pegIndex: 0
+      ringIndex: 2
+      actualColor: 3
+    - pegIndex: 0
+      ringIndex: 1
+      actualColor: 4
+    - pegIndex: 0
+      ringIndex: 0
+      actualColor: 3
+    - pegIndex: 1
+      ringIndex: 2
+      actualColor: 5
+    - pegIndex: 1
+      ringIndex: 1
+      actualColor: 5
+    - pegIndex: 1
+      ringIndex: 0
+      actualColor: 4
+    - pegIndex: 2
+      ringIndex: 2
+      actualColor: 2
+    - pegIndex: 2
+      ringIndex: 1
+      actualColor: 1
+    - pegIndex: 2
+      ringIndex: 0
+      actualColor: 5
+    - pegIndex: 3
+      ringIndex: 2
+      actualColor: 3
+    - pegIndex: 3
+      ringIndex: 1
+      actualColor: 1
+    - pegIndex: 3
+      ringIndex: 0
+      actualColor: 2
+    - pegIndex: 4
+      ringIndex: 2
+      actualColor: 1
+    - pegIndex: 4
+      ringIndex: 1
+      actualColor: 3
+    - pegIndex: 4
+      ringIndex: 0
+      actualColor: 2
+  - numPegs: 6
+    initialPegConfigs:
+    - ringsOnPeg: 05000000010000000200000002000000
+    - ringsOnPeg: 02000000050000000100000003000000
+    - ringsOnPeg: 03000000010000000300000003000000
+    - ringsOnPeg: 04000000050000000400000004000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
     mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
+  - numPegs: 9
+    initialPegConfigs:
+    - ringsOnPeg: 05000000020000000300000002000000
+    - ringsOnPeg: 04000000060000000500000001000000
+    - ringsOnPeg: 02000000070000000700000003000000
+    - ringsOnPeg: 05000000040000000400000003000000
+    - ringsOnPeg: 06000000060000000300000001000000
+    - ringsOnPeg: 02000000010000000700000007000000
+    - ringsOnPeg: 01000000050000000400000006000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
     mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
+  - numPegs: 9
+    initialPegConfigs:
+    - ringsOnPeg: 08000000080000000800000007000000
+    - ringsOnPeg: 08000000080000000800000007000000
+    - ringsOnPeg: 08000000080000000800000004000000
+    - ringsOnPeg: 08000000080000000800000004000000
+    - ringsOnPeg: 08000000080000000800000006000000
+    - ringsOnPeg: 08000000080000000800000001000000
+    - ringsOnPeg: 08000000080000000800000003000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
+    mysteryConfigs:
+    - pegIndex: 0
+      ringIndex: 2
+      actualColor: 2
+    - pegIndex: 0
+      ringIndex: 1
+      actualColor: 5
+    - pegIndex: 0
+      ringIndex: 0
+      actualColor: 2
+    - pegIndex: 1
+      ringIndex: 2
+      actualColor: 3
+    - pegIndex: 1
+      ringIndex: 1
+      actualColor: 5
+    - pegIndex: 1
+      ringIndex: 0
+      actualColor: 5
+    - pegIndex: 2
+      ringIndex: 2
+      actualColor: 6
+    - pegIndex: 2
+      ringIndex: 1
+      actualColor: 4
+    - pegIndex: 2
+      ringIndex: 0
+      actualColor: 4
+    - pegIndex: 3
+      ringIndex: 2
+      actualColor: 5
+    - pegIndex: 3
+      ringIndex: 1
+      actualColor: 1
+    - pegIndex: 3
+      ringIndex: 0
+      actualColor: 7
+    - pegIndex: 4
+      ringIndex: 2
+      actualColor: 1
+    - pegIndex: 4
+      ringIndex: 1
+      actualColor: 3
+    - pegIndex: 4
+      ringIndex: 0
+      actualColor: 2
+    - pegIndex: 5
+      ringIndex: 2
+      actualColor: 1
+    - pegIndex: 5
+      ringIndex: 1
+      actualColor: 2
+    - pegIndex: 5
+      ringIndex: 0
+      actualColor: 6
+    - pegIndex: 6
+      ringIndex: 2
+      actualColor: 7
+    - pegIndex: 6
+      ringIndex: 1
+      actualColor: 3
+    - pegIndex: 6
+      ringIndex: 0
+      actualColor: 6
+  - numPegs: 7
+    initialPegConfigs:
+    - ringsOnPeg: 02000000050000000300000003000000
+    - ringsOnPeg: 04000000020000000500000002000000
+    - ringsOnPeg: 02000000040000000100000003000000
+    - ringsOnPeg: 04000000030000000100000005000000
+    - ringsOnPeg: 01000000040000000100000005000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
     mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
+  - numPegs: 9
+    initialPegConfigs:
+    - ringsOnPeg: 03000000050000000100000002000000
+    - ringsOnPeg: 07000000030000000300000004000000
+    - ringsOnPeg: 05000000060000000400000001000000
+    - ringsOnPeg: 03000000010000000200000007000000
+    - ringsOnPeg: 07000000050000000600000007000000
+    - ringsOnPeg: 05000000040000000200000006000000
+    - ringsOnPeg: 06000000010000000200000004000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
     mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
+  - numPegs: 9
+    initialPegConfigs:
+    - ringsOnPeg: 08000000080000000800000002000000
+    - ringsOnPeg: 08000000080000000800000004000000
+    - ringsOnPeg: 08000000080000000800000003000000
+    - ringsOnPeg: 08000000080000000800000005000000
+    - ringsOnPeg: 08000000080000000800000001000000
+    - ringsOnPeg: 08000000080000000800000007000000
+    - ringsOnPeg: 08000000080000000800000001000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
+    mysteryConfigs:
+    - pegIndex: 0
+      ringIndex: 2
+      actualColor: 2
+    - pegIndex: 0
+      ringIndex: 1
+      actualColor: 2
+    - pegIndex: 0
+      ringIndex: 0
+      actualColor: 6
+    - pegIndex: 1
+      ringIndex: 2
+      actualColor: 5
+    - pegIndex: 1
+      ringIndex: 1
+      actualColor: 6
+    - pegIndex: 1
+      ringIndex: 0
+      actualColor: 2
+    - pegIndex: 2
+      ringIndex: 2
+      actualColor: 6
+    - pegIndex: 2
+      ringIndex: 1
+      actualColor: 4
+    - pegIndex: 2
+      ringIndex: 0
+      actualColor: 6
+    - pegIndex: 3
+      ringIndex: 2
+      actualColor: 3
+    - pegIndex: 3
+      ringIndex: 1
+      actualColor: 4
+    - pegIndex: 3
+      ringIndex: 0
+      actualColor: 1
+    - pegIndex: 4
+      ringIndex: 2
+      actualColor: 5
+    - pegIndex: 4
+      ringIndex: 1
+      actualColor: 7
+    - pegIndex: 4
+      ringIndex: 0
+      actualColor: 1
+    - pegIndex: 5
+      ringIndex: 2
+      actualColor: 3
+    - pegIndex: 5
+      ringIndex: 1
+      actualColor: 7
+    - pegIndex: 5
+      ringIndex: 0
+      actualColor: 4
+    - pegIndex: 6
+      ringIndex: 2
+      actualColor: 7
+    - pegIndex: 6
+      ringIndex: 1
+      actualColor: 3
+    - pegIndex: 6
+      ringIndex: 0
+      actualColor: 5
+  - numPegs: 7
+    initialPegConfigs:
+    - ringsOnPeg: 02000000030000000300000004000000
+    - ringsOnPeg: 05000000020000000100000005000000
+    - ringsOnPeg: 05000000020000000500000004000000
+    - ringsOnPeg: 01000000010000000400000002000000
+    - ringsOnPeg: 04000000030000000100000003000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
     mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
+  - numPegs: 9
+    initialPegConfigs:
+    - ringsOnPeg: 01000000050000000500000001000000
+    - ringsOnPeg: 07000000010000000200000001000000
+    - ringsOnPeg: 04000000040000000300000004000000
+    - ringsOnPeg: 06000000020000000300000006000000
+    - ringsOnPeg: 03000000070000000600000004000000
+    - ringsOnPeg: 07000000060000000500000007000000
+    - ringsOnPeg: 05000000020000000200000003000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
     mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
+  - numPegs: 9
+    initialPegConfigs:
+    - ringsOnPeg: 08000000080000000800000007000000
+    - ringsOnPeg: 08000000080000000800000003000000
+    - ringsOnPeg: 08000000080000000800000002000000
+    - ringsOnPeg: 08000000080000000800000004000000
+    - ringsOnPeg: 08000000080000000800000003000000
+    - ringsOnPeg: 08000000080000000800000001000000
+    - ringsOnPeg: 08000000080000000800000006000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
+    mysteryConfigs:
+    - pegIndex: 0
+      ringIndex: 2
+      actualColor: 2
+    - pegIndex: 0
+      ringIndex: 1
+      actualColor: 6
+    - pegIndex: 0
+      ringIndex: 0
+      actualColor: 7
+    - pegIndex: 1
+      ringIndex: 2
+      actualColor: 1
+    - pegIndex: 1
+      ringIndex: 1
+      actualColor: 2
+    - pegIndex: 1
+      ringIndex: 0
+      actualColor: 5
+    - pegIndex: 2
+      ringIndex: 2
+      actualColor: 3
+    - pegIndex: 2
+      ringIndex: 1
+      actualColor: 5
+    - pegIndex: 2
+      ringIndex: 0
+      actualColor: 2
+    - pegIndex: 3
+      ringIndex: 2
+      actualColor: 6
+    - pegIndex: 3
+      ringIndex: 1
+      actualColor: 1
+    - pegIndex: 3
+      ringIndex: 0
+      actualColor: 7
+    - pegIndex: 4
+      ringIndex: 2
+      actualColor: 7
+    - pegIndex: 4
+      ringIndex: 1
+      actualColor: 4
+    - pegIndex: 4
+      ringIndex: 0
+      actualColor: 3
+    - pegIndex: 5
+      ringIndex: 2
+      actualColor: 4
+    - pegIndex: 5
+      ringIndex: 1
+      actualColor: 5
+    - pegIndex: 5
+      ringIndex: 0
+      actualColor: 1
+    - pegIndex: 6
+      ringIndex: 2
+      actualColor: 6
+    - pegIndex: 6
+      ringIndex: 1
+      actualColor: 5
+    - pegIndex: 6
+      ringIndex: 0
+      actualColor: 4
+  - numPegs: 7
+    initialPegConfigs:
+    - ringsOnPeg: 03000000040000000200000001000000
+    - ringsOnPeg: 04000000050000000100000003000000
+    - ringsOnPeg: 04000000020000000100000003000000
+    - ringsOnPeg: 05000000020000000200000003000000
+    - ringsOnPeg: 05000000050000000100000004000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
     mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
-    mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
-    mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
-    mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
-    mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
-    mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
-    mysteryConfigs: []
-  - numPegs: 0
-    initialPegConfigs: []
+  - numPegs: 9
+    initialPegConfigs:
+    - ringsOnPeg: 03000000010000000500000005000000
+    - ringsOnPeg: 03000000070000000500000007000000
+    - ringsOnPeg: 02000000040000000600000006000000
+    - ringsOnPeg: 04000000050000000300000006000000
+    - ringsOnPeg: 02000000030000000700000001000000
+    - ringsOnPeg: 02000000020000000700000006000000
+    - ringsOnPeg: 04000000040000000100000001000000
+    - ringsOnPeg: 
+    - ringsOnPeg: 
     mysteryConfigs: []
   currentLevelIndex: 0
 --- !u!4 &1372883036

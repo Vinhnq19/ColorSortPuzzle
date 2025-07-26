@@ -107,6 +107,8 @@ MonoBehaviour:
   greenMaterial: {fileID: 2100000, guid: 5a54556f45db66e45a30fa9a803534c7, type: 2}
   yellowMaterial: {fileID: 2100000, guid: 33ff49dcf30ac574597becbb8672c9ec, type: 2}
   orangeMaterial: {fileID: 2100000, guid: f2223e33a183df646a8805400671cd91, type: 2}
+  pinkMaterial: {fileID: 2100000, guid: 50f7fe732865b0a40a82ada2a407a5e2, type: 2}
+  skyBlueMaterial: {fileID: 2100000, guid: 63db821c7ba9d7d44a62698780a2cced, type: 2}
   whiteMaterial: {fileID: 2100000, guid: 4a0b4052bce68b542ae0d6754341659f, type: 2}
 --- !u!65 &6380383878382318244
 BoxCollider:

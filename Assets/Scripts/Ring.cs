@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Ring : MonoBehaviour
 {
-    public enum RingColor { White, Red, Blue, Green, Yellow, Orange, Mystery }
+    public enum RingColor { White, Red, Blue, Green, Yellow, Orange, Pink, SkyBlue, Mystery }
 
     public RingColor currentColor; // Màu hiển thị hiện tại của vòng
     private RingColor _actualColorIfMystery; // Màu thực sự của vòng nếu nó là Mystery
@@ -16,6 +16,8 @@ public class Ring : MonoBehaviour
     public Material greenMaterial;
     public Material yellowMaterial;
     public Material orangeMaterial;
+    public Material pinkMaterial;
+    public Material skyBlueMaterial;
     public Material whiteMaterial; // Thêm material cho màu White (mặc định nếu không có màu cụ thể)
 
     void Awake()
@@ -66,6 +68,12 @@ public class Ring : MonoBehaviour
                 break;
             case RingColor.Orange:
                 materialToApply = orangeMaterial;
+                break;
+            case RingColor.Pink:
+                materialToApply = pinkMaterial;
+                break;
+            case RingColor.SkyBlue:
+                materialToApply = skyBlueMaterial;
                 break;
             case RingColor.White:
                 materialToApply = whiteMaterial;
