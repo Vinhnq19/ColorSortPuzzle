@@ -27,16 +27,13 @@ public class GameManager : MonoBehaviour
     [Header("Level Selection")]
     [SerializeField] private GameObject levelSelectionPanel;
     [SerializeField] private Button levelButtonPrefab;
-    [SerializeField] private Transform levelButtonParent; //GameObject chứa các nút màn chơi(ví dụ: Content của Scroll View/Grid Layout)
+    [SerializeField] private Transform levelButtonParent;
     [System.Serializable]
     public class LevelData
     {
         // Tổng số trụ trong cấp độ này
         public int numPegs;
 
-        // Cấu hình ban đầu của các vòng trên mỗi trụ
-        // Mỗi List<Ring.RingColor> con đại diện cho một trụ
-        // Các vòng được sắp xếp từ dưới lên trên trong List này.
         public List<PegConfig> initialPegConfigs;
 
         [System.Serializable]
@@ -206,8 +203,8 @@ public class GameManager : MonoBehaviour
     public void OnLevelSelected(int levelIndex)
     {
         Debug.Log($"[GameManager.cs] Level {levelIndex + 1} selected.");
-        SelectLevel(levelIndex); // Tải màn chơi đã chọn
-        HideLevelSelectionPanel(); // Ẩn màn hình chọn màn
+        SelectLevel(levelIndex); 
+        HideLevelSelectionPanel();
     }
     // Hàm public để chọn và tải một màn cụ thể
     public void SelectLevel(int levelIndex)
@@ -274,7 +271,7 @@ public class GameManager : MonoBehaviour
                 {
                     if (newPeg.rings.Count >= MAX_RINGS_PER_PEG)
                     {
-                        break; // Dừng nếu trụ đã đầy
+                        break;
                     }
 
                     Ring.RingColor ringConfigColor = ringsConfigForThisPeg[j];
@@ -300,7 +297,7 @@ public class GameManager : MonoBehaviour
                         if (!foundMysteryConfig)
                         {
                             Debug.LogWarning($"[GameManager.cs] Mystery ring at Peg {i}, Ring Index {j} has no corresponding actual color in mysteryConfigs! Defaulting to White.");
-                            actualColor = Ring.RingColor.White; // Fallback nếu không tìm thấy cấu hình
+                            actualColor = Ring.RingColor.White;
                         }
                     }
 
@@ -395,7 +392,6 @@ public class GameManager : MonoBehaviour
             }
             else
             {
-                // Thử di chuyển chuỗi vòng
                 Debug.Log($"[GameManager.cs] Attempting to move stack of {selectedRingStack.Count} rings from {sourcePeg.name} to {clickedPeg.name}");
                 TryMoveRingStack(selectedRingStack, sourcePeg, clickedPeg);
             }
@@ -405,7 +401,7 @@ public class GameManager : MonoBehaviour
     void TryMoveRingStack(List<Ring> ringStackToMove, Peg fromPeg, Peg toPeg)
     {
         // Kiểm tra xem vòng dưới cùng của chuỗi có phải là vòng trên cùng của trụ nguồn không (đảm bảo đúng thứ tự)
-        if (fromPeg.GetTopRing() != ringStackToMove[ringStackToMove.Count - 1]) // Vòng trên cùng của stack là vòng cuối cùng trong list
+        if (fromPeg.GetTopRing() != ringStackToMove[ringStackToMove.Count - 1])
         {
             Debug.LogWarning("[GameManager.cs] Selected ring stack's top ring is not on top of its source peg! Invalid state, resetting selection.");
             foreach (Ring r in ringStackToMove)
@@ -566,7 +562,7 @@ public class GameManager : MonoBehaviour
     public void OnHomeButtonClick()
     {
         Debug.Log("[GameManager.cs] Home button clicked. Showing level selection.");
-        if (winPanel != null) // Đảm bảo ẩn winPanel nếu đang hiển thị
+        if (winPanel != null)
         {
             winPanel.SetActive(false);
         }

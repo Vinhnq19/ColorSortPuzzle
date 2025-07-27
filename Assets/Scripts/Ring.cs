@@ -4,12 +4,12 @@ public class Ring : MonoBehaviour
 {
     public enum RingColor { White, Red, Blue, Green, Yellow, Orange, Pink, SkyBlue, Mystery }
 
-    public RingColor currentColor; // Màu hiển thị hiện tại của vòng
-    private RingColor _actualColorIfMystery; // Màu thực sự của vòng nếu nó là Mystery
+    public RingColor currentColor;
+    private RingColor _actualColorIfMystery;
 
-    private Renderer ringRenderer; // Renderer để thay đổi màu
+    private Renderer ringRenderer;
 
-    // Các Material cho từng màu. Kéo thả các Material đã tạo vào đây trong Inspector của Prefab Ring.
+    // Các Material cho từng màu. 
     public Material mysteryMaterial;
     public Material redMaterial;
     public Material blueMaterial;
@@ -18,7 +18,7 @@ public class Ring : MonoBehaviour
     public Material orangeMaterial;
     public Material pinkMaterial;
     public Material skyBlueMaterial;
-    public Material whiteMaterial; // Thêm material cho màu White (mặc định nếu không có màu cụ thể)
+    public Material whiteMaterial;
 
     void Awake()
     {
@@ -31,7 +31,7 @@ public class Ring : MonoBehaviour
 
     // Hàm khởi tạo màu cho vòng
     // Nếu là Mystery, cần truyền vào màu thực sự của nó
-    public void InitializeColor(RingColor color, RingColor actualColorForMystery = RingColor.White) // Mặc định là White nếu không phải Mystery
+    public void InitializeColor(RingColor color, RingColor actualColorForMystery = RingColor.White) 
     {
         Debug.Log($"[Ring.cs] Initializing ring: Desired Color = {color}, Actual Color If Mystery = {actualColorForMystery}");
         currentColor = color;
@@ -43,7 +43,7 @@ public class Ring : MonoBehaviour
         }
         else
         {
-            ApplyMaterialByColor(color); // Áp dụng material màu cụ thể
+            ApplyMaterialByColor(color);
         }
         Debug.Log($"[Ring.cs] Ring initialized. Current (display): {currentColor}, Actual (if mystery): {_actualColorIfMystery}");
     }
@@ -109,9 +109,8 @@ public class Ring : MonoBehaviour
         if (currentColor == RingColor.Mystery && _actualColorIfMystery != RingColor.White) // Sửa None thành White cho khớp Enum
         {
             Debug.Log($"[Ring.cs] Revealing mystery ring. Actual color: {_actualColorIfMystery}");
-            currentColor = _actualColorIfMystery; // Cập nhật màu hiển thị thành màu thực
-            ApplyMaterialByColor(currentColor); // Áp dụng material của màu thực
-            // Không xóa _actualColorIfMystery, giữ lại để GetActualColor() vẫn hoạt động đúng
+            currentColor = _actualColorIfMystery;
+            ApplyMaterialByColor(currentColor);
             // TODO: Thêm hiệu ứng âm thanh/hình ảnh khi tiết lộ
         }
     }
